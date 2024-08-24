@@ -1,0 +1,56 @@
+import { colorChip } from "./chip";
+import { ColorTokens } from "./types/colors";
+
+export const light: ColorTokens = {
+  Base: {
+    default: colorChip.Gray[100],
+    default_hover: colorChip.Gray[200],
+    default_active: colorChip.Gray[300],
+    elevated: colorChip.White,
+    elevated_hover: colorChip.Gray[100],
+    elevated_active: colorChip.Gray[200],
+    border: colorChip.Gray[200],
+  },
+  Accent: {
+    default: colorChip.Blue[500],
+    default_hover: colorChip.Blue[600],
+    default_active: colorChip.Blue[700],
+    elevated: colorChip.Blue[100],
+    elevated_hover: colorChip.Blue[200],
+    elevated_active: colorChip.Blue[300],
+    border: colorChip.Blue[600],
+  },
+  Negative: {
+    default: colorChip.Red[500],
+    default_hover: colorChip.Red[600],
+    default_active: colorChip.Red[700],
+    elevated: colorChip.Red[100],
+    elevated_hover: colorChip.Red[200],
+    elevated_active: colorChip.Red[300],
+    border: colorChip.Red[600],
+  },
+  Warning: {
+    default: colorChip.Yellow[500],
+    default_hover: colorChip.Yellow[600],
+    default_active: colorChip.Yellow[700],
+    elevated: colorChip.Yellow[100],
+    elevated_hover: colorChip.Yellow[200],
+    elevated_active: colorChip.Yellow[300],
+    border: colorChip.Yellow[600],
+  },
+  Positive: {
+    default: colorChip.Green[500],
+    default_hover: colorChip.Green[600],
+    default_active: colorChip.Green[700],
+    elevated: colorChip.Green[100],
+    elevated_hover: colorChip.Green[200],
+    elevated_active: colorChip.Green[300],
+    border: colorChip.Green[600],
+  },
+  Test: colorChip.Gray[900],
+  Secondary: colorChip.Gray[700],
+  Tertiary: colorChip.Gray[600],
+  Quaternary: colorChip.Gray[500],
+  Unselected: colorChip.Gray[400],
+  Unable: colorChip.Gray[300],
+};
