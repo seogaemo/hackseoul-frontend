@@ -19,7 +19,6 @@ export default function Login() {
       <form
         onSubmit={() => {
           mutate({ id, password });
-
           navigate("/");
         }}
       >

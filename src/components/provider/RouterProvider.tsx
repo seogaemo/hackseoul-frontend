@@ -6,6 +6,7 @@ import PrivateRouter from "../router/PrivateRouter";
 import { QueryClient } from "@tanstack/react-query";
 import Index from "../../pages";
 import Login from "../../pages/login";
+import Layout from "../Layout";
 
 const queryClient = new QueryClient();
 
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
     element: <PrivateRouter />,
     loader: PrivateRouter.loader(queryClient),
     children: [
-      { path: "/", element: <Index /> },
+      // { path: "/", element: <Index /> },
       // {
       //   path: "edit/:id",
       //   loader: ({ params }) => {
@@ -45,6 +46,11 @@ const router = createBrowserRouter([
   //   loader: PrivateRouter.loader(queryClient),
   //   children: [{ path: "admin", element: <Admin /> }],
   // },
+  {
+    path: "/",
+    element: <Layout />,
+    children: [{ path: "/", element: <Index /> }],
+  },
   {
     path: "login",
     element: <Login />,
