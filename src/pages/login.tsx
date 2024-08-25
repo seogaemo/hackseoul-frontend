@@ -37,7 +37,7 @@ export default function Login() {
         />
 
         <Column $fill $gap={4} $alignItems="center">
-          <Button>로그인</Button>
+          <Button $fill>로그인</Button>
 
           <a href="">
             <Typography.Body underline color={"#111111"}>

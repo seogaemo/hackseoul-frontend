@@ -7,6 +7,9 @@ import { QueryClient } from "@tanstack/react-query";
 import Index from "../../pages";
 import Login from "../../pages/login";
 import Layout from "../Layout";
+import ProductCreate from "../../pages/product/create";
+import ProductDetail from "../../pages/product/detail";
+import CompanyCreate from "../../pages/company/create";
 
 const queryClient = new QueryClient();
 
@@ -49,7 +52,12 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
-    children: [{ path: "/", element: <Index /> }],
+    children: [
+      { path: "/", element: <Index /> },
+      { path: "/product/create", element: <ProductCreate /> },
+      { path: "/product/detail/:productId", element: <ProductDetail /> },
+      { path: "/company/create", element: <CompanyCreate /> },
+    ],
   },
   {
     path: "login",

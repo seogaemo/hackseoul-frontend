@@ -30,3 +30,7 @@ button {
 
   display: flex;
 }
+
+body {
+  background: #f1f4f6;
+}

@@ -3,9 +3,11 @@ import { Column } from "./Container";
 import Typography from "./Typography";
 
 interface Props {
-  label: string;
+  isLabel?: boolean;
+  label?: string;
   placeholder: string;
   state: [string, (value: string) => void];
+  type?: string;
 }
 
 export default function Input(props: Props) {
@@ -15,15 +17,17 @@ export default function Input(props: Props) {
 
   return (
     <Column $gap={4} $fill>
-      <div style={{ padding: "0 4px" }}>
-        <Typography.Caption color={theme.colors.Quaternary}>
-          {props.label}
-        </Typography.Caption>
-      </div>
+      {(props.isLabel ?? true) && (
+        <div style={{ padding: "0 4px" }}>
+          <Typography.Caption color={theme.colors.Quaternary}>
+            {props.label}
+          </Typography.Caption>
+        </div>
+      )}
 
       <InputWrapper>
         <input
-          type="text"
+          type={props.type ?? "text"}
           value={value}
           onChange={(e) => setValue(e.target.value)}
           placeholder={props.placeholder}
@@ -41,6 +45,7 @@ const InputWrapper = styled.div`
   align-self: stretch;
   border-radius: 8px;
   border: 1px solid ${({ theme }) => theme.colors.Base.border};
+  background-color: #ffffff;
 
   input {
     &::placeholder {

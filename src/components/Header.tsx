@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import { Row } from "./Container";
 import plusSvg from "../assets/images/plus.svg";
 import profileSvg from "../assets/images/profile.svg";
+import { Link, useNavigate } from "react-router-dom";
 
 interface IconButtonProps {
   icon: string;
@@ -10,7 +11,7 @@ interface IconButtonProps {
 
 function IconButton(props: IconButtonProps) {
   return (
-    <Button>
+    <Button onClick={props.onClick}>
       <img src={props.icon} alt="" />
     </Button>
   );
@@ -34,12 +35,21 @@ const Button = styled.button`
 `;
 
 export default function Header() {
+  const navigate = useNavigate();
+
   return (
     <Container>
-      <img src="/coupang_logo.png" alt="coupang logo" />
+      <Link to="/">
+        <img src="/coupang_logo.png" alt="coupang logo" />
+      </Link>
 
       <Row $gap={4}>
-        <IconButton icon={plusSvg} onClick={() => {}} />
+        <IconButton
+          icon={plusSvg}
+          onClick={() => {
+            navigate("/product/create");
+          }}
+        />
         <IconButton icon={profileSvg} onClick={() => {}} />
       </Row>
     </Container>
